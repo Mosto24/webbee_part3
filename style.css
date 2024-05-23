@@ -1,0 +1,331 @@
+body {
+    margin: 0;
+    background-color: #F1F1F1;
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.icon24 {
+    width: 24px;
+}
+
+.icon20 {
+    width: 20px;
+}
+
+.back {
+    display: flex;
+    align-items: start;
+    padding-top: 12px;
+}
+
+.first {
+    padding-top: 8px;
+    background-color: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.second {
+    display: flex;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #FAFAFA;
+    font-size: 14px;
+}
+
+.picture {
+    max-width: 100%;
+    padding-bottom: 16px;
+}
+
+.post1 {
+    padding-top: 56px;
+    margin-top: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+}
+
+.post2 {
+    margin-top: 32px;
+    display: flex;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+    font-size: 16px;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.post3 {
+    margin-top: 32px;
+    display: flex;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+    font-size: 16px;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.user_profile {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.navigation__block {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+}
+
+.share_block {
+    margin-top: 32px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+}
+
+.icon_text {
+    display: flex;
+    align-items: center;
+
+}
+
+.btn_down {
+    background-color: #fff;
+    border: none;
+}
+
+.n {
+    display: flex;
+}
+
+p {
+    margin: 0px;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.connections {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.events {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user_page_span {
+    font-size: 18px;
+    font-style: normal;
+}
+
+.back p {
+    font-size: 18px;
+}
+
+.col-1 figure {
+    font-size: 14px;
+}
+
+.comment_text {
+    font-size: 14px;
+    display: flex;
+}
+
+.comment_interface {
+    font-size: 16px;
+}
+
+.navigation__block {
+    font-size: 14px;
+}
+
+.name {
+    font-size: 18px;
+}
+
+.skills {
+    font-size: 14px;
+}
+
+.red {
+    background-color: rgba(227, 57, 57, 1);
+}
+
+.green {
+    background-color: rgba(71, 176, 145, 1);
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 5px;
+    gap: 8px;
+    border-radius: 8px;
+}
+
+.blue {
+    color: #5095EC;
+}
+
+.comment_info {
+    padding-top: 16px;
+    color: #8F8F8F;
+}
+
+.comment_interface {
+    display: flex;
+    font-size: 16px;
+}
+
+.comment_interface .icon_text{
+    padding-top: 16px;
+    padding-right: 32px;
+}
+
+.comment_preview {
+    font-size: 14px;
+    padding-bottom: 16px;
+}
+
+.activate_btn {
+    padding-top: 10px;
+}
+
+.activate_btn:hover {
+    background-color: #eeeded;
+}
+
+.user_info {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.n {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.user_info > div {
+    padding-top: 16px;
+}
+
+.settings {
+    padding-bottom: 16px;
+}
+
+.n {
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+.share_add {
+    display: flex;
+    flex-direction: column;
+}
+
+.share_add button {
+    font-size: 14px;
+    color: #FFFFFF;
+    border: none;
+    background-color: #5095EC;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    gap: 8px;
+    border-radius: 4px;
+}
+
+.share_add button:hover {
+    background-color: #4d8fe0;
+}
+
+.share_add textarea {
+    resize: none;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+    height: 88px;
+}
+
+.navigation_btn {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 9px;
+}
+
+.user_profile {
+    padding-top: 32px;
+}
+
+.user_profile img {
+    padding-bottom: 16px;
+}
+
+.name {
+    font-size: 18px;
+    padding-bottom: 8px;
+}
+
+.skills {
+    padding-bottom: 16px;
+    font-size: 14px;
+    color: #8F8F8F;
+}
+
+.contacts {
+    padding-bottom: 35px;
+}
+
+.user_page_span {
+    color: #505050;
+}
+
+.balance_score {
+    color: #8F8F8F;
+}
+
+.line {
+    width: 2px;
+    left: 0px;
+    top: 0px;
+    background: #D3D8DE;
+    margin-right: 8px;
+}
+
+.bottom_line {
+    height: 2px;
+    background-color: #D3D8DE;
+}
+
+.friends {
+    padding-bottom: 16px;
+}
+
+.center-icon figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.now {
+    background: #F1F1F1;
+}
