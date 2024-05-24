@@ -63,7 +63,7 @@ function map_btn() {
 function time_btn() {
     const state = { 'page_id': 3};
     const title = '';
-    const url = 'timer';
+    const url = '/timer';
     history.pushState(state, title, url);
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.timer_btn').classList.add('now');
@@ -263,3 +263,9 @@ const PageType = {
   };
   
 router.set(PageType.DefaultPage);
+
+window.addEventListener('beforeunload', () => {
+    window.location.href = window.origin
+})
+
+console.log(window.name);
