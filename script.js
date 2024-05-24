@@ -19,20 +19,12 @@ let timer = () => {
 timer();
 
 function activity() {
-    const state = { 'page_id': 1};
-    const title = '';
-    const url = 'activity';
-    history.pushState(state, title, url);
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.activity').classList.add('now');
     router.set( 'activity' );
 }
 
 function map_btn() {
-    const state = { 'page_id': 2};
-    const title = '';
-    const url = 'map';
-    history.pushState(state, title, url)
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.map_btn').classList.add('now');
     router.set( 'map' );
@@ -61,10 +53,6 @@ function map_btn() {
 }
 
 function time_btn() {
-    const state = { 'page_id': 3};
-    const title = '';
-    const url = '/timer';
-    history.pushState(state, title, url);
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.timer_btn').classList.add('now');
     router.set( 'timer' );
@@ -263,9 +251,3 @@ const PageType = {
   };
   
 router.set(PageType.DefaultPage);
-
-window.addEventListener('beforeunload', () => {
-    window.location.href = window.origin
-})
-
-console.log(window.name);
