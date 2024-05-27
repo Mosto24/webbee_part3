@@ -12,22 +12,13 @@ let timer = () => {
         let seconds = Math.trunc((new Date() - new Date(date))/1000) - minutes*60 - hours*60*60;
         seconds = seconds < 10 ? `0${seconds}` : seconds;
         let timer = `${hours}:${minutes}:${seconds}`;
-        document.querySelector('.timer').textContent = timer;
+        if (document.location.hash == '#time') {
+            document.querySelector('.timer').textContent = timer;
+        }
     }, 1000);
 }
 
-timer();
-
-function activity() {
-    document.querySelector('.now').classList.remove('now')
-    document.querySelector('.activity').classList.add('now');
-    router.set( 'activity' );
-}
-
-function map_btn() {
-    document.querySelector('.now').classList.remove('now')
-    document.querySelector('.map_btn').classList.add('now');
-    router.set( 'map' );
+function createMap () {
     navigator.geolocation.getCurrentPosition((pos) => {
         a = pos.coords.latitude;
         b = pos.coords.longitude;
@@ -52,21 +43,36 @@ function map_btn() {
     });
 }
 
+window.addEventListener("popstate", () => {
+    let hash = document.location.hash;
+    router.set(hash.slice(1));
+})
+
+function activity() {
+    router.set( 'activity' );
+}
+
+function map_btn() {
+    router.set( 'map' );
+}
+
 function time_btn() {
-    document.querySelector('.now').classList.remove('now')
-    document.querySelector('.timer_btn').classList.add('now');
-    router.set( 'timer' );
+    router.set( 'time' );
 }
 
 const PageType = {
     MainPage: "activity",
     MapPage: "map",
-    TimerPage: "timer",
+    TimerPage: "time",
 
     DefaultPage: "activity"
   };
   
   const activityPage = () => {
+    history.pushState({page: 1}, '', '#activity');
+    document.title = 'Activity';
+    document.querySelector('.now').classList.remove('now')
+    document.querySelector('.activity').classList.add('now');
     return (`<section>
     <div class="container">
         <div class="row">
@@ -202,7 +208,13 @@ const PageType = {
     </div>
 </section>`)
   };
+  
   const mapPage = () => {
+    history.pushState({page: 2}, '', '#map');
+    document.title = 'Map';
+    document.querySelector('.now').classList.remove('now')
+    document.querySelector('.map_btn').classList.add('now');
+    createMap();
     return (`<section class="content_map">
     <div class="content_menu">
         <p>Basic map</p>
@@ -221,6 +233,11 @@ const PageType = {
 </section>`);
   };
   const timerPage = () => {
+    history.pushState({page: 3}, '', '#time');
+    document.title = 'Timer';
+    document.querySelector('.now').classList.remove('now')
+    document.querySelector('.timer_btn').classList.add('now');
+    timer();
     return (`<section class="timer_block">
     <div class="content_menu">
         <p>Timer</p>
@@ -250,4 +267,4 @@ const PageType = {
     }
   };
   
-router.set(PageType.DefaultPage);
+router.set(PageType.MainPage);
