@@ -24,7 +24,7 @@ function createMap () {
         b = pos.coords.longitude;
         async function initMap() {
             await ymaps3.ready;
-            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+            const {YMap, YMapDefaultSchemeLayer, YMapMarker, YMapDefaultFeaturesLayer} = ymaps3;
             const map = new YMap(
                 document.querySelector('.map'),
                 {
@@ -38,6 +38,20 @@ function createMap () {
             map.addChild(new YMapDefaultSchemeLayer());
             let loader = document.querySelector('.loader');
             loader.classList.remove('loader')
+            const layer = new YMapDefaultFeaturesLayer({});
+            map.addChild(layer);
+            const markerElement = document.createElement('div');
+            markerElement.className = 'marker-class';
+
+            const marker = new YMapMarker(
+                {
+                    coordinates: [b, a],
+                    mapFollowsOnDrag: true
+                },
+                markerElement
+            );
+
+            map.addChild(marker);
         }
         initMap();
     });

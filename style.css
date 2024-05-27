@@ -405,3 +405,10 @@ p {
     padding-bottom: 32px;
     align-items: center;
 }
+
+.marker-class {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 10px;
+}
