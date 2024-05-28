@@ -59,7 +59,11 @@ function createMap () {
 
 window.addEventListener("popstate", () => {
     let hash = document.location.hash;
-    router.set(hash.slice(1));
+    if (hash) {
+        router.set(hash.slice(1));
+    } else {
+        router.set('activity')
+    }
 })
 
 function activity() {
@@ -282,4 +286,9 @@ const PageType = {
   };
 
 let hash = document.location.hash;
+
+if (hash) {
 router.set(hash.slice(1));
+} else {
+    router.set('activity')
+}
