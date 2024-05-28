@@ -63,14 +63,17 @@ window.addEventListener("popstate", () => {
 })
 
 function activity() {
+    history.pushState({page: 1}, '', '#activity');
     router.set( 'activity' );
 }
 
 function map_btn() {
+    history.pushState({page: 2}, '', '#map');
     router.set( 'map' );
 }
 
 function time_btn() {
+    history.pushState({page: 3}, '', '#time');
     router.set( 'time' );
 }
 
@@ -83,7 +86,6 @@ const PageType = {
   };
   
   const activityPage = () => {
-    history.pushState({page: 1}, '', '#activity');
     document.title = 'Activity';
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.activity').classList.add('now');
@@ -224,7 +226,6 @@ const PageType = {
   };
   
   const mapPage = () => {
-    history.pushState({page: 2}, '', '#map');
     document.title = 'Map';
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.map_btn').classList.add('now');
@@ -247,7 +248,6 @@ const PageType = {
 </section>`);
   };
   const timerPage = () => {
-    history.pushState({page: 3}, '', '#time');
     document.title = 'Timer';
     document.querySelector('.now').classList.remove('now')
     document.querySelector('.timer_btn').classList.add('now');
@@ -280,5 +280,6 @@ const PageType = {
       document.body.querySelector('.main').innerHTML = templates[ routeType ]();
     }
   };
-  
-router.set(PageType.MainPage);
+
+let hash = document.location.hash;
+router.set(hash.slice(1));
